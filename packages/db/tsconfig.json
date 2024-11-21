@@ -1,0 +1,18 @@
+{
+  "extends": "@repo/typescript-config/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist",  // Ensure it's using commonjs for Node.js compatibility
+    "target": "es2020",     // Use a modern ECMAScript version
+    "strict": true,         // Enable strict type checking
+    "esModuleInterop": true, // Ensure compatibility with commonJS modules
+    "skipLibCheck": true,    // Skip checking type definitions for libraries
+    "baseUrl": ".",         // Base directory for resolving non-relative module names
+    "paths": {
+      "*": ["node_modules/*"] // Ensure the correct resolution of modules in the monorepo
+    }
+  },
+  "include": ["*.ts","prisma/**/*.ts"], // Add any paths that need to be included for Prisma scripts
+  "exclude": ["node_modules", "dist"]
+}
+
+  
